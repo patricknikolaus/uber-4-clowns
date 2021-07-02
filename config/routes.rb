@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/clowns" => "clowns#index"
+
+  post "/bookings" => "bookings#create"
+
+  post "/sessions" => "sessions#create"
+
+  post "/users" => "users#create"
 end
