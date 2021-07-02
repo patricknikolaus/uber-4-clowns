@@ -8,4 +8,18 @@ class BookingsController < ApplicationController
     booking.save
     render json: booking.as_json
   end
+
+  def index
+    if current_user
+      bookings = current_user.bookings
+      render json: bookings
+    else
+      render json: [], status: :unauthorized
+    end
+  end
+
+  def most
+    render json: {message: "hello"}
+  end
+
 end
